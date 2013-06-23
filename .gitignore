@@ -1,0 +1,13 @@
+.o
+Thumbs.db
+.DS_Store
+aclocal.m4
+config.log
+configure
+missing
+autom4te.cache
+config.status
+depcomp
+install-sh
+Makefile
+Makefile.in
