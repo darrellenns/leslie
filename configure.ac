@@ -1,7 +1,7 @@
 AC_INIT([Leslie], [0.1], [darrell@darrellenns.com],
         [leslie], [http://www.darrellenns.com])
 AC_PREREQ([2.59])
-AM_INIT_AUTOMAKE([1.10 -Wall no-define])
+AM_INIT_AUTOMAKE([1.10 -Wall no-define foreign])
 AC_CONFIG_MACRO_DIR([m4])
 
 #AC_CONFIG_HEADERS([config.h])
