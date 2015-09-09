@@ -26,7 +26,7 @@ ColorArray Widget::color_b=
 };
 
 const int Widget::fontsize=12;
-const char* Widget::fontface="/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-B.ttf";
+const char* Widget::fontface="/usr/share/fonts/TTF/DejaVuSans.ttf";
 
 FTGLPixmapFont Widget::font(fontface);
 
