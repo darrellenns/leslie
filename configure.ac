@@ -9,7 +9,7 @@ AC_PROG_CXX
 AC_PROG_CC
 
 AC_ARG_ENABLE([gui],
-    AS_HELP_STRING([--disable-gui], [Disable feature foo]))
+    AS_HELP_STRING([--disable-gui], [Disable GUI (OSC control only)]))
 
 AS_IF([test "x$enable_gui" != "xno"], [
 	PKG_CHECK_MODULES([gl], [gl])
