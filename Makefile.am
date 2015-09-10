@@ -1,9 +1,9 @@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4
-leslie_CPPFLAGS = $(gl_CFLAGS) $(glu_CFLAGS) $(freetype2_CFLAGS) $(jack_CFLAGS) $(alsa_CFLAGS) $(liblo_CFLAGS) $(ftgl_CFLAGS) $(boost_signals_CFLAGS) $(glut_CFLAGS)
+leslie_CPPFLAGS = $(gl_CFLAGS) $(glu_CFLAGS) $(freetype2_CFLAGS) $(jack_CFLAGS) $(alsa_CFLAGS) $(liblo_CFLAGS) $(ftgl_CFLAGS) $(boost_signals_CFLAGS) $(glut_CFLAGS) $(fontconfig_CFLAGS)
 bin_PROGRAMS = leslie
 leslie_SOURCES = src/gui.cpp src/leslie.cpp src/main.cpp src/osc.cpp src/widget.cpp src/gui.h src/leslie.h src/main.h src/osc.h src/widget.h
-leslie_LDADD = $(gl_LIBS) $(glu_LIBS) $(freetype2_LIBS) $(jack_LIBS) $(alsa_LIBS) $(liblo_LIBS) $(ftgl_LIBS) $(boost_signals_LIBS) $(glut_LIBS) $(BOOST_LDFLAGS) $(BOOST_SIGNALS_LIB)
+leslie_LDADD = $(gl_LIBS) $(glu_LIBS) $(freetype2_LIBS) $(jack_LIBS) $(alsa_LIBS) $(liblo_LIBS) $(ftgl_LIBS) $(boost_signals_LIBS) $(glut_LIBS) $(BOOST_LDFLAGS) $(BOOST_SIGNALS_LIB) $(fontconfig_LIBS)
 dist_noinst_SCRIPTS = autogen.sh
 
 .PHONY: full-clean

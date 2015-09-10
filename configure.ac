@@ -16,6 +16,7 @@ AS_IF([test "x$enable_gui" != "xno"], [
 	PKG_CHECK_MODULES([glu], [glu])
 	PKG_CHECK_MODULES([freetype2], [freetype2])
 	PKG_CHECK_MODULES([ftgl], [ftgl])
+	PKG_CHECK_MODULES([fontconfig], [fontconfig]);
 	AC_SEARCH_LIBS(glutMainLoop,glut,,[AC_MSG_ERROR([glut not found])])
 	AX_BOOST_BASE([1.46])
 	AX_BOOST_SIGNALS

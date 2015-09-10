@@ -4,6 +4,38 @@
 #include <FTGL/ftgl.h>
 #include <string>
 #include <sstream>
+#include <fontconfig/fontconfig.h>
+
+char* getFont(const char* name){
+	char* retval=NULL;
+	FcChar8 *file;
+	FcPattern *pat = FcNameParse((const FcChar8*)name);
+	FcObjectSet *os = FcObjectSetCreate ();
+	FcObjectSetAdd (os, "sans serif");
+	FcConfigSubstitute (0, pat, FcMatchPattern);
+	FcDefaultSubstitute (pat);
+	FcFontSet *fs = FcFontSetCreate ();
+	FcResult result;
+	FcPattern *match = FcFontMatch (0, pat, &result);
+	if(match) FcFontSetAdd(fs,match);
+
+	printf("%d\n",fs->nfont);
+
+	if(fs->nfont>0){
+		if(FcPatternGetString(fs->fonts[0],FC_FILE,0,&file)==FcResultMatch){
+			retval=(char*)malloc(sizeof(FcChar8)*strlen((char*)file)+1);
+			strcpy(retval,(char*) file);
+			//retval=std::string((const char*) file);
+		}
+	}
+
+	FcPatternDestroy(pat);
+	FcFontSetDestroy(fs);
+	FcObjectSetDestroy(os);
+
+	return retval;
+
+}
 
 //blues
 ColorArray Widget::color_a=
@@ -26,7 +58,7 @@ ColorArray Widget::color_b=
 };
 
 const int Widget::fontsize=12;
-const char* Widget::fontface="/usr/share/fonts/TTF/DejaVuSans.ttf";
+const char* Widget::fontface=getFont("sans serif");//"/usr/share/fonts/TTF/DejaVuSans.ttf";
 
 FTGLPixmapFont Widget::font(fontface);
 
