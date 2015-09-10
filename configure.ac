@@ -4,7 +4,7 @@ AC_PREREQ([2.59])
 AM_INIT_AUTOMAKE([1.10 -Wall no-define foreign])
 AC_CONFIG_MACRO_DIR([m4])
 
-#AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_HEADERS([config.h])
 AC_PROG_CXX
 AC_PROG_CC
 
@@ -20,7 +20,7 @@ AS_IF([test "x$enable_gui" != "xno"], [
 	AC_SEARCH_LIBS(glutMainLoop,glut,,[AC_MSG_ERROR([glut not found])])
 	AX_BOOST_BASE([1.46])
 	AX_BOOST_SIGNALS
-	AC_DEFINE(ENABLE_GUI)
+	AC_DEFINE([ENABLE_GUI],[1],[Enable GUI components])
 ])
 
 PKG_CHECK_MODULES([jack], [jack])
