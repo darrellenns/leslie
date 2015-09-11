@@ -4,6 +4,9 @@
 #include "osc.h"
 #include "gui.h"
 #include "leslie.h"
+#ifndef ENABLE_GUI
+#include <unistd.h>
+#endif
 
 using namespace std;
 

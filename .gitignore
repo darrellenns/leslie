@@ -13,4 +13,9 @@ Makefile
 Makefile.in
 .deps
 .dirstamp
+compile
+config.h
+config.h.in
+config.h.in~
+stamp-h1
 /leslie

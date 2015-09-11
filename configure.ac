@@ -7,6 +7,7 @@ AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADERS([config.h])
 AC_PROG_CXX
 AC_PROG_CC
+AC_PROG_INSTALL
 
 AC_ARG_ENABLE([gui],
     AS_HELP_STRING([--disable-gui], [Disable GUI (OSC control only)]))
@@ -26,6 +27,8 @@ AS_IF([test "x$enable_gui" != "xno"], [
 PKG_CHECK_MODULES([jack], [jack])
 PKG_CHECK_MODULES([alsa], [alsa])
 PKG_CHECK_MODULES([liblo], [liblo])
+AC_FUNC_MALLOC
+AC_CHECK_HEADER_STDBOOL
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
